@@ -19,6 +19,14 @@
             max-width: 1200px;
             padding: 0 20px;
         }
+        /* app.css */
+.sticky-bar-show {
+  display: block !important;
+}
+
+.sticky-bar-hide {
+  display: none !important;
+}
     </style>
     </head>
 
@@ -1174,6 +1182,26 @@
               </div>
             </div>
           </footer>
+          <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 bg-gray-200 hidden">
+            <div class="container mx-auto flex items-center justify-between py-2 px-4">
+              <div>Get 10% off with code DISCOUNT10</div>
+              <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Shop Now</button>
+            </div>
+            <script>
+                // app.js
+window.addEventListener('scroll', function() {
+  var stickyBar = document.getElementById('sticky-bar');
+  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollPosition > 2400) {
+    stickyBar.classList.add('sticky-bar-show');
+    stickyBar.classList.remove('sticky-bar-hide');
+  } else {
+    stickyBar.classList.add('sticky-bar-hide');
+    stickyBar.classList.remove('sticky-bar-show');
+  }
+});
+            </script>
     </body>
 
 </html>
